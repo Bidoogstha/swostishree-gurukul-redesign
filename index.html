@@ -170,12 +170,12 @@ nav a:hover{color:var(--orange)}
 .event a:hover{color:var(--orange)}
 
 /* CTA band */
-.cta-band{background:var(--forest) url('Green.jpg') repeat;color:var(--white);text-align:center;position:relative}
-.cta-band::before{content:"";position:absolute;inset:0;background:rgba(18,48,31,.45)}
-.cta-band .wrap{position:relative;z-index:2}
-.cta-band h2{color:var(--white)}
+.cta-band{background:var(--forest) url('Green.jpg') repeat;color:var(--white);text-align:center;position:relative;isolation:isolate}
+.cta-band::before{content:"";position:absolute;inset:0;background:rgba(18,48,31,.4);z-index:-1}
+.cta-band .wrap{position:relative}
 .cta-band .dev{font-family:var(--dev);font-size:1.3rem;color:var(--gold);margin-bottom:10px}
-.cta-band p{max-width:56ch;margin:12px auto 32px;color:rgba(255,255,255,.85)}
+.cta-band h2{color:var(--white);text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.cta-band p{max-width:56ch;margin:12px auto 32px;color:#FFFFFF;text-shadow:0 1px 8px rgba(0,0,0,.45)}
 
 /* footer */
 footer.site{background:var(--forest);color:rgba(255,255,255,.82);padding:80px 0 40px;font-size:.93rem}
