@@ -92,10 +92,10 @@ nav a:hover{color:var(--orange)}
 .ib-badge b{color:var(--gold)}
 
 /* stats */
-.stats{background:var(--sky);padding:44px 0;border-top:1px solid rgba(0,0,0,.05)}
+.stats{background:var(--navy);padding:44px 0}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
 .stat-item{text-align:center}
-.stat-item b{display:block;font-family:var(--serif);font-size:2.5rem;color:var(--forest);line-height:1;margin-bottom:6px}
+.stat-item span{font-size:.85rem;color:var(--navy);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 .stat-item span{font-size:.85rem;color:var(--navy);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 
 /* continuum — signature */
@@ -170,7 +170,9 @@ nav a:hover{color:var(--orange)}
 .event a:hover{color:var(--orange)}
 
 /* CTA band */
-.cta-band{background:linear-gradient(120deg,var(--forest-dark),var(--forest));color:var(--white);text-align:center}
+.cta-band{background:var(--forest) url('Green.jpg') repeat;color:var(--white);text-align:center;position:relative}
+.cta-band::before{content:"";position:absolute;inset:0;background:rgba(18,48,31,.45)}
+.cta-band .wrap{position:relative;z-index:2}
 .cta-band h2{color:var(--white)}
 .cta-band .dev{font-family:var(--dev);font-size:1.3rem;color:var(--gold);margin-bottom:10px}
 .cta-band p{max-width:56ch;margin:12px auto 32px;color:rgba(255,255,255,.85)}
