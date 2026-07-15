@@ -491,7 +491,7 @@ if(statsBand){
       els.forEach(el=>{const v=+el.dataset.count;el.textContent=el.dataset.comma?v.toLocaleString('en-US'):v});
       return;
     }
-    const D=3500,t0=performance.now();
+    const D=2500,t0=performance.now();
     const tick=now=>{
       const t=Math.min((now-t0)/D,1),e=1-Math.pow(1-t,3);
       els.forEach(el=>{
