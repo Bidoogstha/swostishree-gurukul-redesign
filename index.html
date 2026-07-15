@@ -97,6 +97,7 @@ nav a:hover{color:var(--orange)}
 .stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
 .stat-item{text-align:center}
 .stat-item b{display:block;font-family:var(--serif);font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:6px}
+.stat-item b .count{font:inherit;color:inherit;letter-spacing:normal;text-transform:none}
 .stat-item span{font-size:.85rem;color:rgba(255,255,255,.9);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
 
 /* continuum — signature */
@@ -489,7 +490,7 @@ if(statsBand){
       els.forEach(el=>{const v=+el.dataset.count;el.textContent=el.dataset.comma?v.toLocaleString('en-US'):v});
       return;
     }
-    const D=2000,t0=performance.now();
+    const D=3500,t0=performance.now();
     const tick=now=>{
       const t=Math.min((now-t0)/D,1),e=1-Math.pow(1-t,3);
       els.forEach(el=>{
