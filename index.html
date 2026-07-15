@@ -257,10 +257,10 @@ footer.site a:hover{color:var(--gold)}
 
 <div class="stats" aria-label="School at a glance">
   <div class="wrap">
-    <div class="stat-item"><b>3</b><span>IB Programmes<br>PYP · MYP · DP</span></div>
-    <div class="stat-item"><b>3–19</b><span>Ages of continuous learning</span></div>
-    <div class="stat-item"><b>5,700+</b><span>IB World Schools globally</span></div>
-    <div class="stat-item"><b>1</b><span>Campus for the whole journey</span></div>
+    <div class="stat-item"><b><span class="count" data-count="3">0</span></b><span>IB Programmes<br>PYP · MYP · DP</span></div>
+    <div class="stat-item"><b><span class="count" data-count="3">0</span>–<span class="count" data-count="19">0</span></b><span>Ages of continuous learning</span></div>
+    <div class="stat-item"><b><span class="count" data-count="5700" data-comma="1">0</span>+</b><span>IB World Schools globally</span></div>
+    <div class="stat-item"><b><span class="count" data-count="1">0</span></b><span>Campus for the whole journey</span></div>
   </div>
 </div>
 
@@ -481,6 +481,28 @@ footer.site a:hover{color:var(--gold)}
 <script>
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const statsBand=document.querySelector('.stats');
+if(statsBand){
+  const runCounters=()=>{
+    const els=[...statsBand.querySelectorAll('.count')];
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+      els.forEach(el=>{const v=+el.dataset.count;el.textContent=el.dataset.comma?v.toLocaleString('en-US'):v});
+      return;
+    }
+    const D=2000,t0=performance.now();
+    const tick=now=>{
+      const t=Math.min((now-t0)/D,1),e=1-Math.pow(1-t,3);
+      els.forEach(el=>{
+        const v=Math.round(+el.dataset.count*e);
+        el.textContent=el.dataset.comma?v.toLocaleString('en-US'):v;
+      });
+      if(t<1)requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){runCounters();sio.unobserve(e.target)}}),{threshold:.4});
+  sio.observe(statsBand);
+}
 document.querySelectorAll('#mainmenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mainmenu').classList.remove('open')));
 </script>
 </body>
