@@ -48,6 +48,21 @@ h3{font-size:1.45rem;margin-bottom:.8rem}
 .lead{font-size:1.1rem;color:#4A5568;max-width:64ch}
 .center{text-align:center}
 .center .lead{margin:0 auto}
+nav ul li.has-dropdown{position:relative;display:flex;align-items:center}
+.dropdown-toggle{background:none;border:none;cursor:pointer;padding:0 6px;color:inherit;font-size:.7em}
+.dropdown{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid #e5e1d8;
+  box-shadow:0 12px 24px rgba(0,0,0,.12);border-radius:6px;padding:8px 0;display:none;z-index:50;list-style:none;margin:0}
+.dropdown.open{display:block}
+.dropdown a{display:block;padding:10px 20px;white-space:nowrap;color:#1A2D42;text-decoration:none}
+.dropdown a:hover,.dropdown a:focus{background:#f7f3ec;color:#BC4B12}
+
+@media (min-width:993px){
+  nav ul li.has-dropdown:hover .dropdown,
+  nav ul li.has-dropdown:focus-within .dropdown{display:block}
+}
+@media (max-width:992px){
+  .dropdown{position:static;box-shadow:none;border:none;padding-left:16px}
+}
 
 /* heritage rule */
 .crest-treatment{border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:14px 0;margin:24px 0;display:inline-block}
@@ -233,11 +248,30 @@ footer.site a:hover{color:var(--gold)}
     <nav aria-label="Main">
       <button class="menu-btn" aria-expanded="false" aria-controls="mainmenu" onclick="const m=document.getElementById('mainmenu');const o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)" aria-label="Menu">☰</button>
       <ul id="mainmenu">
-        <li><a href="#programmes">Academics</a></li>
-        <li><a href="https://swostishreegurukul.edu.np/page/admission-procedures">Admissions</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <a href="about.html" aria-expanded="false">About Us</a>
+          <button class="dropdown-toggle" aria-label="Show About Us submenu" aria-expanded="false"><span aria-hidden="true">▾</span></button>
+          <ul class="dropdown">
+            <li><a href="about-introduction.html">Introduction</a></li>
+            <li><a href="about-mission-vision.html">Mission &amp; Vision</a></li>
+            <li><a href="about-md-message.html">Message from Managing Director</a></li>
+            <li><a href="about-principal-message.html">Message from Principal</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="academics.html" aria-expanded="false">Academics</a>
+          <button class="dropdown-toggle" aria-label="Show Academics submenu" aria-expanded="false"><span aria-hidden="true">▾</span></button>
+          <ul class="dropdown">
+            <li><a href="academics-pyp.html">Primary Years (PYP)</a></li>
+            <li><a href="academics-myp.html">Middle Years (MYP)</a></li>
+            <li><a href="academics-dp.html">Diploma (DP)</a></li>
+            <li><a href="academics-plus2.html">+2 Programme</a></li>
+          </ul>
+        </li>
+        <li><a href="admissions.html">Admissions</a></li>
         <li><a href="#experience">Campus Life</a></li>
-        <li><a href="https://swostishreegurukul.edu.np/page/about-us">About Us</a></li>
-        <li><a class="btn btn-primary" href="https://swostishreegurukul.edu.np/pre-registration">Apply Now</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="https://swostishreegurukul.edu.np/pre-registration">Apply Now</a></li>
       </ul>
     </nav>
   </div>
@@ -506,6 +540,28 @@ if(statsBand){
   sio.observe(statsBand);
 }
 document.querySelectorAll('#mainmenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mainmenu').classList.remove('open')));
+</script>
+<script>
+document.querySelectorAll('.dropdown-toggle').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.preventDefault();
+    const li=btn.closest('li');
+    const sub=li.querySelector('.dropdown');
+    const open=sub.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    li.querySelector('a').setAttribute('aria-expanded',open);
+  });
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+  }
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('li.has-dropdown')){
+    document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+  }
+});
 </script>
 </body>
 </html>
