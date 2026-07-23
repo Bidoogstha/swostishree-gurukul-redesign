@@ -231,6 +231,18 @@ footer.site a:hover{color:var(--gold)}
 .page-hero .crumb{font-size:.85rem;margin-bottom:8px;color:rgba(255,255,255,.85)}
 .page-hero .crumb a{color:#fff;text-decoration:underline}
 .page-hero h1{color:#fff;font-size:clamp(2rem,4vw,3rem);text-shadow:0 2px 14px rgba(0,0,0,.4)}
+.value-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:16px;margin-top:32px}
+.value-card{background:#fff;border:1px solid rgba(18,48,31,.12);border-radius:14px;padding:20px 16px;text-align:center;transition:transform .25s ease,box-shadow .25s ease}
+.value-card:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(18,48,31,.12)}
+.value-card .num{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;background:rgba(18,48,31,.08);color:#12301f;font-weight:700;font-size:.85rem;margin-bottom:10px}
+.value-card p{margin:0;font-weight:600;color:#12301f;font-size:.95rem}
+.vm-split{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.vm-split .vm-block{background:#fff;border-radius:16px;padding:32px;box-shadow:0 8px 30px rgba(18,48,31,.08)}
+.vm-block .eyebrow{display:block;margin-bottom:10px}
+.motto-band{background:#12301f;color:#fff;text-align:center;padding:56px 24px;border-radius:16px;margin-top:48px}
+.motto-band .np{font-size:1.4rem;margin-bottom:6px}
+.motto-band .en{opacity:.85;font-size:.95rem;letter-spacing:.04em;text-transform:uppercase}
+@media (max-width:768px){.vm-split{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -362,6 +374,56 @@ footer.site a:hover{color:var(--gold)}
       <a href="#"><img src="https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/1350x550-345459848_796198805512516_2000314867591676534_n.jpg" alt="Students at Swostishree Gurukul" loading="lazy"><span>Student Life</span></a>
       <a href="#"><img src="https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/1350x550-2P7A5395(1).jpg" alt="Campus activity" loading="lazy"><span>Campus Activities</span></a>
       <a href="#"><img src="https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/1350x550-3E5A9231.jpg" alt="Classroom learning" loading="lazy"><span>Classroom Learning</span></a>
+    </div>
+  </div>
+</section>
+
+<section class="page-hero" style="background-image:url('https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/1350x320-0Vision_Statement.jpg')">
+  <div class="page-hero-overlay"></div>
+  <div class="wrap page-hero-content">
+    <p class="crumb"><a href="index.html">Home</a> / <a href="about.html">About Us</a> / Mission & Vision</p>
+    <h1>Mission &amp; Vision</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap vm-split reveal">
+    <div class="vm-block">
+      <span class="eyebrow">Our Vision</span>
+      <p class="lead">Swostishree Gurukul sees itself raising generations of lifelong learners committed to academic excellence, social responsibility, and global citizenship — a place where every student is prepared to lead, both in Nepal and beyond, in an environment built to nurture creativity and unlock full potential.</p>
+    </div>
+    <div class="vm-block">
+      <span class="eyebrow">Our Mission</span>
+      <p class="lead">We support inspired learning through dedicated teaching, caring relationships, a challenging curriculum, and active community service — giving every child the best possible education while valuing their effort, imagination, and contribution, and treating the partnership between family and school as central to that work.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap reveal">
+    <span class="eyebrow">Core Values</span>
+    <h2>The IB Learner Profile at Swostishree</h2>
+    <p class="lead">Guided by the motto <b>"Learning today, Leading tomorrow,"</b> we shape students around the ten IB Learner Profile traits, preparing capable, responsible citizens for the 21st century.</p>
+    <div class="value-grid">
+      <div class="value-card"><span class="num">1</span><p>Knowledgeable</p></div>
+      <div class="value-card"><span class="num">2</span><p>Inquirer</p></div>
+      <div class="value-card"><span class="num">3</span><p>Caring</p></div>
+      <div class="value-card"><span class="num">4</span><p>Principled</p></div>
+      <div class="value-card"><span class="num">5</span><p>Balanced</p></div>
+      <div class="value-card"><span class="num">6</span><p>Courageous</p></div>
+      <div class="value-card"><span class="num">7</span><p>Communicator</p></div>
+      <div class="value-card"><span class="num">8</span><p>Open-Minded</p></div>
+      <div class="value-card"><span class="num">9</span><p>Thinker</p></div>
+      <div class="value-card"><span class="num">10</span><p>Reflective</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap reveal">
+    <div class="motto-band">
+      <p class="np">आजको शिक्षा, भोलिको नेतृत्व</p>
+      <p class="en">Learning Today, Leading Tomorrow</p>
     </div>
   </div>
 </section>
