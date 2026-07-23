@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Swostishree Gurukul — IB Continuum School, Kathmandu</title>
+<meta name="description" content="Swostishree Gurukul is an IB Continuum school in Sanobharyang, Kathmandu, authorized for PYP, MYP and the IB Diploma Programme. One school, one journey — age 3 to university.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,500;0,600;0,700;1,500&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Noto+Serif+Devanagari:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  /* User palette — muted & sophisticated */
+  --forest:#1B4332;
+  --forest-dark:#12301F;
+  --orange:#BC4B12;
+  --orange-dark:#963C0E;
+  --gold:#D4A373;
+  --gold-soft:#EAD9C3;
+  --navy:#1A2D42;
+  --sky:#E9F1F7;
+  --grey:#F8F9FA;
+  --white:#FFFFFF;
+  --line:#E7E3DC;
+  --serif:'Crimson Pro',Georgia,serif;
+  --sans:'Atkinson Hyperlegible',system-ui,sans-serif;
+  --dev:'Noto Serif Devanagari',serif;
+  --maxw:1200px;
+  --transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+body{font-family:var(--sans);color:var(--navy);background:var(--white);line-height:1.7;font-size:17px}
+img{max-width:100%;display:block}
+a{color:var(--forest)}
+a:focus-visible,button:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:2px}
+h1,h2,h3,h4{font-family:var(--serif);color:var(--navy);line-height:1.15;font-weight:600}
+h1{font-size:clamp(2.5rem,5vw,4.2rem)}
+h2{font-size:clamp(2rem,4vw,2.8rem);margin-bottom:1.2rem}
+h3{font-size:1.45rem;margin-bottom:.8rem}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 40px}
+.section{padding:100px 0}
+.eyebrow{font-family:var(--sans);font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;color:var(--orange);margin-bottom:1rem;display:block}
+.lead{font-size:1.1rem;color:#4A5568;max-width:64ch}
+.center{text-align:center}
+.center .lead{margin:0 auto}
+nav ul li.has-dropdown{position:relative;display:flex;align-items:center}
+.dropdown-toggle{background:none;border:none;cursor:pointer;padding:0 6px;color:inherit;font-size:.7em}
+.dropdown{position:absolute;top:100%;left:0;min-width:230px;background:#fff;border:1px solid #e5e1d8;
+  box-shadow:0 12px 24px rgba(0,0,0,.12);border-radius:6px;padding:8px 0;display:none;z-index:50;list-style:none;margin:0}
+.dropdown.open{display:block}
+.dropdown a{display:block;padding:10px 20px;white-space:nowrap;color:#1A2D42;text-decoration:none}
+.dropdown a:hover,.dropdown a:focus{background:#f7f3ec;color:#BC4B12}
+
+@media (min-width:993px){
+  nav ul li.has-dropdown:hover .dropdown,
+  nav ul li.has-dropdown:focus-within .dropdown{display:block}
+}
+@media (max-width:992px){
+  .dropdown{position:static;box-shadow:none;border:none;padding-left:16px}
+}
+
+/* heritage rule */
+.crest-treatment{border-top:1px solid var(--gold);border-bottom:1px solid var(--gold);padding:14px 0;margin:24px 0;display:inline-block}
+.crest-treatment p{font-family:var(--dev);font-size:1.25rem;color:var(--forest)}
+
+/* topbar */
+.topbar{background:var(--forest);color:var(--white);font-size:.85rem;padding:8px 0}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.topbar a{color:var(--white);text-decoration:none;opacity:.9}
+.topbar a:hover{opacity:1;text-decoration:underline}
+
+/* nav */
+header.nav{background:var(--white);border-bottom:1px solid rgba(0,0,0,.05);position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(0,0,0,.03)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:90px}
+.brand{display:flex;align-items:center;gap:15px;text-decoration:none}
+.brand img{height:48px;width:auto}
+.brand .name{font-family:var(--serif);font-weight:700;font-size:1.35rem;color:var(--forest);line-height:1.1}
+.brand .tag{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange);font-weight:700;line-height:1.15;display:inline-block}
+.brand>span{line-height:1.05}
+nav ul{display:flex;list-style:none;gap:32px;align-items:center}
+nav a{text-decoration:none;color:var(--navy);font-weight:700;font-size:.95rem;transition:var(--transition)}
+nav a:hover{color:var(--orange)}
+.menu-btn{display:none;background:none;border:0;font-size:1.8rem;color:var(--forest);cursor:pointer;min-width:44px;min-height:44px}
+.btn{display:inline-block;padding:14px 32px;font-weight:700;text-decoration:none;border-radius:4px;font-size:.95rem;transition:var(--transition);border:2px solid transparent;min-height:44px}
+.btn-primary{background:var(--orange);color:var(--white)}
+.btn-primary:hover{background:var(--orange-dark);color:var(--white);transform:translateY(-2px);box-shadow:0 4px 15px rgba(188,75,18,.3)}
+.btn-outline{background:transparent;border-color:var(--white);color:var(--white)}
+.btn-outline:hover{background:var(--white);color:var(--forest)}
+.btn-forest{background:var(--forest);color:var(--white)}
+.btn-forest:hover{background:var(--forest-dark)}
+
+/* hero */
+.hero{position:relative;min-height:85vh;display:flex;align-items:center;background:var(--forest);overflow:hidden}
+.hero .bg{position:absolute;inset:0;background:url('schoolbackground.jpg') center/cover no-repeat}
+.hero .bg::after{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,48,31,.92) 0%,rgba(18,48,31,.72) 45%,rgba(18,48,31,.3) 100%)}
+.hero .wrap{position:relative;z-index:2;color:var(--white);padding-top:120px;padding-bottom:90px}
+.hero .dev-tag{font-family:var(--dev);font-size:1.1rem;color:var(--gold);margin-bottom:16px}
+.hero h1{color:var(--white);max-width:17ch;margin-bottom:1.5rem;text-shadow:0 2px 18px rgba(0,0,0,.45)}
+.hero h1 span{color:var(--gold);font-style:italic}
+.hero p{font-size:1.2rem;max-width:58ch;margin-bottom:2.5rem;color:#FFF;text-shadow:0 1px 10px rgba(0,0,0,.4)}
+.hero .cta-row{display:flex;gap:20px;flex-wrap:wrap}
+.ib-badge{margin-top:44px;display:inline-flex;align-items:center;gap:10px;background:rgba(255,255,255,.09);border:1px solid rgba(212,163,115,.5);padding:9px 18px;border-radius:99px;font-size:.87rem;color:rgba(255,255,255,.92)}
+.ib-badge b{color:var(--gold)}
+
+/* stats */
+.stats{background:var(--navy);padding:44px 0}
+.stats .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:40px}
+.stat-item{text-align:center}
+.stat-item b{display:block;font-family:var(--serif);font-size:2.5rem;color:var(--gold);line-height:1;margin-bottom:6px}
+.stat-item b .count{font:inherit;color:inherit;letter-spacing:normal;text-transform:none}
+.stat-item span{font-size:.85rem;color:rgba(255,255,255,.9);font-weight:700;text-transform:uppercase;letter-spacing:.05em}
+
+/* continuum — signature */
+.continuum{overflow-x:auto;padding:44px 0 8px}
+.c-track{position:relative;display:grid;grid-template-columns:repeat(5,1fr);min-width:860px;margin-top:8px}
+.c-track::before{content:"";position:absolute;top:27px;left:9%;right:9%;height:4px;background:linear-gradient(90deg,var(--orange),var(--gold) 55%,var(--forest));border-radius:2px}
+.c-stop{position:relative;text-align:center;padding:0 14px}
+.c-dot{--c:var(--orange);width:56px;height:56px;border-radius:50%;background:var(--white);border:4px solid var(--c);margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-weight:700;font-family:var(--serif);color:var(--forest);font-size:1.05rem;position:relative;z-index:2;transition:background .25s ease,color .25s ease;cursor:default}
+.c-stop:nth-child(2) .c-dot{--c:#C4712E}
+.c-stop:nth-child(3) .c-dot{--c:var(--gold)}
+.c-stop:nth-child(4) .c-dot{--c:#5B7355}
+.c-stop:nth-child(5) .c-dot{--c:var(--forest)}
+.c-dot:hover{background:var(--c);color:var(--white)}
+.c-stop h3{font-size:1.08rem;margin-bottom:2px;color:var(--forest)}
+.c-stop .age{font-size:.78rem;font-weight:700;color:var(--orange);letter-spacing:.06em;text-transform:uppercase}
+.c-stop p{font-size:.88rem;color:#5B6676;margin-top:6px}
+
+/* programme cards */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:48px}
+.card{background:var(--white);border:1px solid var(--line);transition:var(--transition);display:flex;flex-direction:column;overflow:hidden}
+.card:hover{transform:translateY(-8px);box-shadow:0 20px 40px rgba(27,67,50,.1);border-color:var(--gold)}
+.card img{height:190px;width:100%;object-fit:cover}
+.card .pad{padding:32px;display:flex;flex-direction:column;flex:1}
+.card h3{color:var(--forest)}
+.card p{color:#555;font-size:.95rem;flex:1}
+.card .more{color:var(--orange);font-weight:700;text-decoration:none;display:block;margin-top:16px}
+.card .more:hover{text-decoration:underline}
+
+/* islington-style alternating band */
+.band{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.band.flip .media{order:-1}
+.band .media img{width:100%;border-radius:4px;box-shadow:20px 20px 0 var(--gold)}
+.band.flip .media img{box-shadow:-20px 20px 0 var(--gold-soft)}
+.checklist{list-style:none;margin-top:24px;display:grid;gap:15px}
+.checklist li{display:flex;gap:14px;align-items:flex-start}
+.checklist svg{flex:none;margin-top:5px}
+
+/* experience strip — islington style */
+.exp-scroll{display:grid;grid-auto-flow:column;grid-auto-columns:300px;gap:22px;overflow-x:auto;padding:40px 4px 20px;scroll-snap-type:x mandatory}
+.exp-card{position:relative;height:400px;overflow:hidden;border-radius:4px;text-decoration:none;scroll-snap-align:start}
+.exp-card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.exp-card:hover img{transform:scale(1.06)}
+.exp-card .label{position:absolute;left:0;right:0;bottom:0;padding:80px 22px 22px;background:linear-gradient(transparent,rgba(18,48,31,.92));color:var(--white)}
+.exp-card .label b{font-family:var(--serif);font-size:1.25rem;display:block;line-height:1.25}
+.exp-card .label span{font-size:.82rem;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;font-weight:700}
+
+/* testimonials */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:48px}
+.quote{background:var(--white);border:1px solid var(--line);border-top:4px solid var(--gold);padding:32px}
+.quote p{font-family:var(--serif);font-size:1.1rem;font-style:italic;color:var(--navy)}
+.quote footer{margin-top:18px;display:flex;gap:12px;align-items:center}
+.quote footer img{width:46px;height:46px;border-radius:50%;object-fit:cover}
+.quote footer b{font-size:.9rem;display:block;line-height:1.3;color:var(--forest)}
+.quote footer span{font-size:.8rem;color:#777}
+
+/* facilities */
+.facil{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin-top:44px}
+.facil a{position:relative;overflow:hidden;text-decoration:none;aspect-ratio:3/2.3;display:block;border-radius:4px}
+.facil img{width:100%;height:100%;object-fit:cover;transition:transform .35s}
+.facil a:hover img{transform:scale(1.06)}
+.facil span{position:absolute;left:0;right:0;bottom:0;padding:30px 12px 12px;background:linear-gradient(transparent,rgba(18,48,31,.9));color:var(--white);font-weight:700;font-size:.88rem}
+
+/* notices + events */
+.split{display:grid;grid-template-columns:1.2fr .8fr;gap:60px}
+.notice-list{list-style:none;margin-top:24px}
+.notice-list li{border-bottom:1px solid var(--line)}
+.notice-list a{display:block;padding:16px 4px;text-decoration:none;color:var(--navy);font-weight:700}
+.notice-list a:hover{color:var(--orange)}
+.event{display:flex;gap:16px;padding:15px 0;border-bottom:1px solid var(--line);align-items:center}
+.event .date{flex:none;width:62px;height:62px;background:var(--forest);color:var(--white);border-radius:4px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:700;line-height:1.1}
+.event .date small{font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold)}
+.event a{text-decoration:none;color:var(--navy);font-weight:700}
+.event a:hover{color:var(--orange)}
+
+/* CTA band */
+.cta-band{background:var(--navy);color:var(--white);text-align:center;position:relative;isolation:isolate}
+.cta-band .wrap{position:relative}
+.cta-band h2{color:#FFF;text-shadow:0 2px 14px rgba(0,0,0,.5)}
+.cta-band .dev{font-family:var(--dev);font-size:1.3rem;color:var(--gold);margin-bottom:10px}
+.cta-band p{max-width:56ch;margin:12px auto 32px;color:#FFF;text-shadow:0 1px 8px rgba(0,0,0,.45)}
+
+/* footer */
+footer.site{background:var(--forest);color:rgba(255,255,255,.82);padding:80px 0 40px;font-size:.93rem}
+footer.site h4{color:var(--white);margin-bottom:1.4rem;font-size:1.15rem}
+footer.site ul{list-style:none;display:grid;gap:10px}
+footer.site a{color:inherit;text-decoration:none;transition:var(--transition)}
+footer.site a:hover{color:var(--gold)}
+.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.2fr;gap:60px}
+.legal{border-top:1px solid rgba(255,255,255,.12);margin-top:60px;padding-top:28px;text-align:center;font-size:.83rem}
+
+/* reveal */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
+.reveal.in{opacity:1;transform:none}
+
+@media (max-width:992px){
+  .grid,.footer-grid,.quotes{grid-template-columns:repeat(2,1fr)}
+  .stats .wrap{grid-template-columns:repeat(2,1fr);gap:26px}
+  .band{grid-template-columns:1fr;gap:44px}
+  .band.flip .media{order:0}
+  .facil{grid-template-columns:repeat(2,1fr)}
+  .split{grid-template-columns:1fr}
+  nav ul{position:fixed;inset:90px 0 auto 0;background:var(--white);flex-direction:column;gap:0;border-bottom:1px solid var(--line);display:none;padding:8px 0 18px;box-shadow:0 16px 30px rgba(0,0,0,.08)}
+  nav ul.open{display:flex}
+  nav ul a{display:block;padding:14px 24px;width:100vw;text-align:center}
+  .menu-btn{display:block}
+}
+@media (max-width:600px){
+  .grid,.footer-grid,.quotes,.stats .wrap{grid-template-columns:1fr}
+  .hero .cta-row{flex-direction:column}
+  .wrap{padding:0 22px}
+  .section{padding:64px 0}
+}
+.page-hero{position:relative;height:300px;display:flex;align-items:flex-end;background-size:cover;background-position:center}
+.page-hero-overlay{position:absolute;inset:0;background:linear-gradient(100deg,rgba(18,48,31,.88) 0%,rgba(18,48,31,.55) 60%)}
+.page-hero-content{position:relative;z-index:2;padding-bottom:36px;color:#fff}
+.page-hero .crumb{font-size:.85rem;margin-bottom:8px;color:rgba(255,255,255,.85)}
+.page-hero .crumb a{color:#fff;text-decoration:underline}
+.page-hero h1{color:#fff;font-size:clamp(2rem,4vw,3rem);text-shadow:0 2px 14px rgba(0,0,0,.4)}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="wrap">
+    <div>📍 Sanobharyang, Kathmandu &nbsp;·&nbsp; <a href="tel:014890314">01-4890314/16</a> &nbsp;·&nbsp; <a href="mailto:info@swostishreegurukul.edu.np">info@swostishreegurukul.edu.np</a></div>
+    <div><a href="https://swostishreegurukul.edu.np/press-reader">Press Reader</a> &nbsp;·&nbsp; <a href="https://swostishreegurukul.edu.np/switch">नेपाली</a></div>
+  </div>
+</div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="https://swostishreegurukul.edu.np">
+      <img src="logo.png" alt="Swostishree Gurukul logo">
+      <span>
+        <span class="name">Swostishree Gurukul</span><br>
+        <span class="tag">IB Continuum World School</span>
+      </span>
+    </a>
+    <nav aria-label="Main">
+      <button class="menu-btn" aria-expanded="false" aria-controls="mainmenu" onclick="const m=document.getElementById('mainmenu');const o=m.classList.toggle('open');this.setAttribute('aria-expanded',o)" aria-label="Menu">☰</button>
+      <ul id="mainmenu">
+        <li><a href="index.html">Home</a></li>
+        <li class="has-dropdown">
+          <a href="about.html" aria-expanded="false">About Us</a>
+          <button class="dropdown-toggle" aria-label="Show About Us submenu" aria-expanded="false"><span aria-hidden="true">▾</span></button>
+          <ul class="dropdown">
+            <li><a href="about-introduction.html">Introduction</a></li>
+            <li><a href="about-mission-vision.html">Mission &amp; Vision</a></li>
+            <li><a href="about-md-message.html">Message from Managing Director</a></li>
+            <li><a href="about-principal-message.html">Message from Principal</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <a href="academics.html" aria-expanded="false">Academics</a>
+          <button class="dropdown-toggle" aria-label="Show Academics submenu" aria-expanded="false"><span aria-hidden="true">▾</span></button>
+          <ul class="dropdown">
+            <li><a href="academics-pyp.html">Primary Years (PYP)</a></li>
+            <li><a href="academics-myp.html">Middle Years (MYP)</a></li>
+            <li><a href="academics-dp.html">Diploma (DP)</a></li>
+            <li><a href="academics-plus2.html">+2 Programme</a></li>
+          </ul>
+        </li>
+        <li><a href="admissions.html">Admissions</a></li>
+        <li><a href="#experience">Campus Life</a></li>
+        <li class="nav-cta"><a class="btn btn-primary" href="https://swostishreegurukul.edu.np/pre-registration">Apply Now</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="page-hero" style="background-image:url('https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/1350x320-kg1.jpg')">
+  <div class="page-hero-overlay"></div>
+  <div class="wrap page-hero-content">
+    <p class="crumb"><a href="index.html">Home</a> / <a href="about.html">About Us</a> / Introduction</p>
+    <h1>Introduction</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap band reveal">
+    <div>
+      <span class="eyebrow">Educational Philosophy</span>
+      <h2>Curriculum at Swostishree Gurukul</h2>
+      <p class="lead"><b>Swostishree Gurukul is an IB Continuum School</b> authorized to offer the Primary Years Programme (PYP), Middle Years Programme (MYP), and Diploma Programme (DP) by the IBO. As an IB Continuum School, we share a common IB philosophy and a commitment to a high-quality, challenging curriculum, which is essential for our students.</p>
+      <p class="lead">There are more than 5,700 IB schools around the world that follow a shared IB philosophy, standards, practices, and world-class teaching pedagogy — and we are proud to be part of this global community creating global citizens who strive to change the world.</p>
+      <p class="lead"><b>The school was established with the vision of becoming an IB Continuum School</b> to provide world-class education within the country, achieving this goal in a very short period of time — becoming the second school in the nation to implement all three IB programmes.</p>
+    </div>
+    <div class="media">
+      <img src="https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/400-School_Building.jpg" alt="Swostishree Gurukul school building" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--grey)">
+  <div class="wrap reveal">
+    <div class="center" style="max-width:760px;margin:0 auto">
+      <span class="eyebrow">Constructivist, Inquiry-Based Learning</span>
+      <h2>Approaches to Teaching &amp; Learning</h2>
+      <p class="lead">Teaching and learning at Swostishree Gurukul celebrates the many ways people work together to construct meaning and make sense of the world — through the interplay of asking, doing and thinking.</p>
+    </div>
+    <div class="grid" style="grid-template-columns:1fr 1fr;margin-top:48px">
+      <div class="card" style="border-top:4px solid var(--orange)">
+        <div class="pad">
+          <h3>Our Approaches to Teaching</h3>
+          <p style="margin-bottom:.6rem;color:#888;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em">How We Teach</p>
+          <ul class="checklist">
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#BC4B12" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#BC4B12" stroke-width="2" stroke-linecap="round"/></svg><span>Based on inquiry</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#BC4B12" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#BC4B12" stroke-width="2" stroke-linecap="round"/></svg><span>Focused on agency — student ownership of learning</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#BC4B12" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#BC4B12" stroke-width="2" stroke-linecap="round"/></svg><span>Focused on conceptual understanding</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#BC4B12" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#BC4B12" stroke-width="2" stroke-linecap="round"/></svg><span>Transdisciplinary — local and global context</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#BC4B12" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#BC4B12" stroke-width="2" stroke-linecap="round"/></svg><span>Effective teamwork and collaboration</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#BC4B12" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#BC4B12" stroke-width="2" stroke-linecap="round"/></svg><span>A differentiated approach for all learners</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#BC4B12" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#BC4B12" stroke-width="2" stroke-linecap="round"/></svg><span>Continuous assessment and reflection</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="border-top:4px solid var(--forest)">
+        <div class="pad">
+          <h3>Our Approaches to Learning</h3>
+          <p style="margin-bottom:.6rem;color:#888;font-weight:700;font-size:.85rem;text-transform:uppercase;letter-spacing:.05em">How Students Learn</p>
+          <ul class="checklist">
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#1B4332" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1B4332" stroke-width="2" stroke-linecap="round"/></svg><span>Self-management skills</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#1B4332" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1B4332" stroke-width="2" stroke-linecap="round"/></svg><span>Communication skills</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#1B4332" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1B4332" stroke-width="2" stroke-linecap="round"/></svg><span>Social skills</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#1B4332" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1B4332" stroke-width="2" stroke-linecap="round"/></svg><span>Thinking skills</span></li>
+            <li><svg width="18" height="18" viewBox="0 0 20 20" fill="none" aria-hidden="true"><circle cx="10" cy="10" r="9" stroke="#1B4332" stroke-width="2"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#1B4332" stroke-width="2" stroke-linecap="round"/></svg><span>Research skills</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap reveal" style="max-width:900px;margin:0 auto;text-align:center">
+    <span class="eyebrow">Approaches to Learning (ATL)</span>
+    <h2>Learning Through Sustained Inquiry</h2>
+    <p class="lead" style="margin:0 auto">In Swostishree Gurukul IB Continuum School, students have opportunities to establish and pursue sustained inquiries. In this way they gain knowledge, conceptual understandings, skills and dispositions to contribute to, and make a difference in, their own lives, their communities and the wider world. ATL skills are an integral part of an IB education, helping students think, research, communicate, socialize and manage themselves effectively.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--grey)">
+  <div class="wrap reveal">
+    <span class="eyebrow">Life at Swostishree</span>
+    <h2>Around Our Campus</h2>
+    <div class="facil" style="grid-template-columns:repeat(3,1fr)">
+      <a href="#"><img src="https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/1350x550-345459848_796198805512516_2000314867591676534_n.jpg" alt="Students at Swostishree Gurukul" loading="lazy"><span>Student Life</span></a>
+      <a href="#"><img src="https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/1350x550-2P7A5395(1).jpg" alt="Campus activity" loading="lazy"><span>Campus Activities</span></a>
+      <a href="#"><img src="https://swostishreegurukul.edu.np/images/cache/e66443e81e8cc9c4fa5c099a1fb1bb87/1350x550-3E5A9231.jpg" alt="Classroom learning" loading="lazy"><span>Classroom Learning</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <h4 style="font-size:1.4rem">Swostishree Gurukul</h4>
+        <p style="margin-bottom:20px">An IB Continuum World School authorized by the IBO for PYP, MYP and DP — part of a global community of 5,700+ IB World Schools creating global citizens who strive to change the world.</p>
+      </div>
+      <div>
+        <h4>Academics</h4>
+        <ul>
+          <li><a href="https://swostishreegurukul.edu.np/post/primary-years-programme-pyp">Primary Years</a></li>
+          <li><a href="https://swostishreegurukul.edu.np/post/middle-years-programme-myp">Middle Years</a></li>
+          <li><a href="https://swostishreegurukul.edu.np/page/ib-diploma-programme-dp-1">Diploma Programme</a></li>
+          <li><a href="https://swostishreegurukul.edu.np/page/2-program">+2 Programme</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Admissions</h4>
+        <ul>
+          <li><a href="https://swostishreegurukul.edu.np/page/admission-procedures">How to Apply</a></li>
+          <li><a href="https://swostishreegurukul.edu.np/pre-registration">Pre-registration Form</a></li>
+          <li><a href="https://swostishreegurukul.edu.np/page/download">Download Resources</a></li>
+          <li><a href="https://swostishreegurukul.edu.np/contact">Visit Campus</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact Us</h4>
+        <ul>
+          <li>Sanobharyang, Kathmandu, Nepal</li>
+          <li><a href="tel:014890314">01-4890314/16</a></li>
+          <li><a href="tel:9801879600">9801-879600 / 601 / 602</a></li>
+          <li><a href="mailto:info@swostishreegurukul.edu.np">info@swostishreegurukul.edu.np</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="legal"><p>© 2026 Swostishree Gurukul. All Rights Reserved.</p></div>
+  </div>
+</footer>
+
+<script>
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+const statsBand=document.querySelector('.stats');
+if(statsBand){
+  const runCounters=()=>{
+    const els=[...statsBand.querySelectorAll('.count')];
+    if(matchMedia('(prefers-reduced-motion: reduce)').matches){
+      els.forEach(el=>{const v=+el.dataset.count;el.textContent=el.dataset.comma?v.toLocaleString('en-US'):v});
+      return;
+    }
+    const D=2500,t0=performance.now();
+    const tick=now=>{
+      const t=Math.min((now-t0)/D,1),e=1-Math.pow(1-t,3);
+      els.forEach(el=>{
+        const v=Math.round(+el.dataset.count*e);
+        el.textContent=el.dataset.comma?v.toLocaleString('en-US'):v;
+      });
+      if(t<1)requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  };
+  const sio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){runCounters();sio.unobserve(e.target)}}),{threshold:.4});
+  sio.observe(statsBand);
+}
+document.querySelectorAll('#mainmenu a').forEach(a=>a.addEventListener('click',()=>document.getElementById('mainmenu').classList.remove('open')));
+</script>
+<script>
+document.querySelectorAll('.dropdown-toggle').forEach(btn=>{
+  btn.addEventListener('click',e=>{
+    e.preventDefault();
+    const li=btn.closest('li');
+    const sub=li.querySelector('.dropdown');
+    const open=sub.classList.toggle('open');
+    btn.setAttribute('aria-expanded',open);
+    li.querySelector('a').setAttribute('aria-expanded',open);
+  });
+});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+  }
+});
+document.addEventListener('click',e=>{
+  if(!e.target.closest('li.has-dropdown')){
+    document.querySelectorAll('.dropdown.open').forEach(d=>d.classList.remove('open'));
+  }
+});
+</script>
+</body>
+</html>
